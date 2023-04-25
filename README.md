@@ -1,3 +1,1 @@
-# printf
-printf team project
-first mod for test locally
+in this repo we are implimanting printf

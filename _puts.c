@@ -1,20 +1,28 @@
 #include "main.h"
-/**
- * _puts - writes the string s to stdout
- * @s: The string to print
- *
- * Return: On success the number of characters printed.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _puts(char *s)
-{
-	int count = 0;
 
-	while (*s)
+/**
+ * _puts - Entry point. Print string
+ * @s: variable va_list
+ *
+ * Return: k (nbytes) 6 (NULL)
+ */
+int _puts(va_list s)
+{
+	char *str;
+	int k;
+
+	str = va_arg(s, char*);
+	if (str == NULL)
 	{
-		_putchar(*s);
-		count++;
-		s++;
+		write(1, "(null)", 6);
+		return (6);
 	}
-	return (count);
+	else
+	{
+		for (k = 0; str[k] != '\0'; k++)
+		{
+			_putchar(str[k]);
+		}
+	}
+	return (k);
 }

@@ -1,13 +1,29 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdarg.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
 #include <unistd.h>
 
+/**
+ * struct types - specifier for printf
+ * @p: pointer to specifiers
+ * @func : function pointer to print functions
+ */
+typedef struct types
+{
+	char p;
+	int (*func)(va_list);
+} print_f;
+
 int _putchar(char c);
-int _print_number(int n);
-int _strlen(char *s);
-int _puts(char *s);
 int _printf(const char *format, ...);
-#endif
+
+int _putc(va_list l);
+int _puts(va_list s);
+int _putn(va_list n);
+int (*_comp(const char a))(va_list);
+
+#endif /* main_h */
