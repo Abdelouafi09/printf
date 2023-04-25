@@ -1,32 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
-/**
- * _putchar - diplay string
- * @c: string
- * Return
- */
-
-int _putchar(char c)
-{
-  return write(1, &c, 1);
-}
-/**
- * _strlen - count char in string
- * @str: string to count
- *
- */
-int _strlen(char *str)
-{
-  int len = 0;
-  while (*str != '\0') {
-    len++;
-    str++;
-  }
-  return len;
-}
-
 
 /**
  * _printf - print string to stdout
