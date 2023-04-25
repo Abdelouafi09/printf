@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - print string to stdout
  * @format: string to display
