@@ -9,6 +9,7 @@
 int _puts(char *s)
 {
 	int count = 0;
+
 	while (*s)
 	{
 		_putchar(*s);

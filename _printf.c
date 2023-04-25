@@ -1,18 +1,15 @@
 #include "main.h"
-
 /**
  * _printf - print string to stdout
  * @format: string to display
  * Return: count
  */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
 
 	va_start(args, format);
-
 	while (*format)
 	{
 		if (*format == '%')
@@ -26,11 +23,12 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					{
-						char *str = va_arg(args, char *);
-						if (!str)
-							str = "(null)";
-						count += _puts(str);
-						break;
+					char *str = va_arg(args, char *);
+
+					if (!str)
+						str = "(null)";
+					count += _puts(str);
+					break;
 					}
 				case 'd':
 				case 'i':
