@@ -1,53 +1,61 @@
+#include "main.h"
+
+/**
+ * _printf - print string to stdout
+ * @format: string to display
+ * Return: count
+ */
+
 int _printf(const char *format, ...)
 {
-  va_list args;
-  int count = 0;
+	va_list args;
+	int count = 0;
 
-  va_start(args, format);
+	va_start(args, format);
 
-  while (*format)
-    {
-      if (*format == '%')
+	while (*format)
 	{
-	  format++;
-	  switch (*format)
-	    {
-	    case 'c':
-	      _putchar(va_arg(args, int));
-	      count++;
-	      break;
-	    case 's':
-	      {
-		char *str = va_arg(args, char *);
-		if (!str)
-		  str = "(null)";
-		count += _puts(str);
-		break;
-	      }
-	    case 'd':
-	    case 'i':
-	      count += _print_number(va_arg(args, int));
-	      break;
-	    case '%':
-	      _putchar('%');
-	      count++;
-	      break;
-	    default:
-	      _putchar('%');
-	      _putchar(*format);
-	      count += 2;
-	      break;
-	    }
+		if (*format == '%')
+		{
+			format++;
+			switch (*format)
+			{
+				case 'c':
+					_putchar(va_arg(args, int));
+					count++;
+					break;
+				case 's':
+					{
+						char *str = va_arg(args, char *);
+						if (!str)
+							str = "(null)";
+						count += _puts(str);
+						break;
+					}
+				case 'd':
+				case 'i':
+					count += _print_number(va_arg(args, int));
+					break;
+				case '%':
+					_putchar('%');
+					count++;
+					break;
+				default:
+					_putchar('%');
+					_putchar(*format);
+					count += 2;
+					break;
+			}
+		}
+		else
+		{
+			_putchar(*format);
+			count++;
+		}
+		format++;
 	}
-      else
-	{
-	  _putchar(*format);
-	  count++;
-	}
-      format++;
-    }
 
-  va_end(args);
+	va_end(args);
 
-  return (count);
+	return (count);
 }
