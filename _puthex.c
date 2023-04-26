@@ -1,56 +1,64 @@
 #include "main.h"
 
+
 /**
- * _puthex - Prints an unsigned integer argument as a hexadecimal number.
- * @my_list: A va_list containing the unsigned integer to be printed.
- * @upp: A flag indicating uppercase or lowercase.
+ * print_hex - prints an unsigned int in hexadecimal
+ * @arg: the unsigned int to print
+ * @uppercase: a flag indicating whether to print the letters in uppercase
  *
- * Return: The number of characters printed.
+ * Return: the number of characters printed
  */
-int _puthex(va_list my_list, int upp)
+int print_hex(va_list arg, int uppercase)
 {
-	unsigned int n = va_arg(my_list, unsigned int);
-	char hexDigits[] = "0123456789abcdef";
-	char hexChar;
-	int hexLen = 0, i;
-	int count = 0, digit;
+	unsigned int n = va_arg(arg, unsigned int);
+	char hex_chars[] = "0123456789abcdef";
+	int base = 16;
+	int printed_chars = 0;
+	char buffer[32];
+	int i = 0;
 
-	/* Count number of hexadecimal digits in the number */
-	do {
-		n /= 16;
-		hexLen++;
-	} while (n != 0);
-
-	/* Print the hexadecimal digits */
-	for (i = hexLen - 1; i >= 0; i--)
+	if (n == 0)
 	{
-		digit = (n >> (i * 4)) & 0xf; /* Extract the next hexadecimal digit */
-		hexChar = upp ? _toupper(hexDigits[digit]) : hexDigits[digit];
-		_putchar(hexChar);
-		count++;
+		putchar('0');
+		return (1);
 	}
 
-	return (count);
+	while (n != 0)
+	{
+		buffer[i++] = hex_chars[n % base];
+		n /= base;
+	}
+
+	for (i = i - 1; i >= 0; i--)
+	{
+		if (uppercase)
+			putchar(_toupper(buffer[i]));
+		else
+			putchar(buffer[i]);
+		printed_chars++;
+	}
+
+	return (printed_chars);
 }
 
 /**
- * _puthex_lower - Prints an ui lowercase hexadecimal number.
- * @my_list: A va_list containing the unsigned integer to be printed.
+ * print_x - prints an unsigned int in lowercase hexadecimal
+ * @arg: the unsigned int to print
  *
- * Return: The number of characters printed.
+ * Return: the number of characters printed
  */
-int _puthex_lower(va_list my_list)
+int print_x(va_list arg)
 {
-	return (_puthex(my_list, 0));
+	return (print_hex(arg, 0));
 }
 
 /**
- * _puthex_upper - Prints an ui argument as an uppercase hexadecimal number.
- * @my_list: A va_list containing the unsigned integer to be printed.
+ * print_X - prints an unsigned int in uppercase hexadecimal
+ * @arg: the unsigned int to print
  *
- * Return: The number of characters printed.
+ * Return: the number of characters printed
  */
-int _puthex_upper(va_list my_list)
+int print_X(va_list arg)
 {
-	return (_puthex(my_list, 1));
+	return (print_hex(arg, 1));
 }

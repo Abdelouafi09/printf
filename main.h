@@ -32,9 +32,8 @@ int _putb(va_list list);
 int _putb(va_list my_list);
 int _putun(va_list my_list);
 int _putoct(va_list my_list);
-int _puthex_lower(va_list my_list);
-int _puthex_upper(va_list my_list);
-
+int print_x(va_list arg);
+int print_X(va_list arg);
 
 int (*_comp(const char a))(va_list);
 
