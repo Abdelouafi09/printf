@@ -14,6 +14,7 @@ int (*_comp(const char c))(va_list)
 		{'s', _puts},
 		{'d', _putn},
 		{'i', _putn},
+		{'b', _putb},
 		{'\0', NULL}
 	};
 

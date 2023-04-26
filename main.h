@@ -24,6 +24,9 @@ int _printf(const char *format, ...);
 int _putc(va_list l);
 int _puts(va_list s);
 int _putn(va_list n);
+int _putb(va_list list);
+int _putb(va_list my_list);
+
 int (*_comp(const char a))(va_list);
 
 #endif /* main_h */
