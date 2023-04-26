@@ -1,4 +1,4 @@
-.TH man 3 "21 July 2020" "0.01" "_printf man page"
+.TH man 3 "26 April 2021" "0.01" "_printf man page"
 .SH NAME
 .B _printf
 - A simple re-creation of the printf function
@@ -20,6 +20,14 @@ To use _printf you have to use the following key characters preceeded by % symbo
 .RS 0
 %b: To print a number in binary form
 .SH RETURN VALUES
+%u: To print unsigned integers
+.RS 0
+%o: To print unsigned integers in octal form
+.RS 0
+%X: To print unsigned integers in uppercase hex form
+.RS 0
+%x: To print unsigned integers in lowercase hex form
+.RS 0
 The _printf() function returns an integer representing the number of symbols
 printed not counting \\0 for the string.
 .SH SEE ALSO
