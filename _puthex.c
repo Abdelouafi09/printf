@@ -4,7 +4,7 @@
 /**
  * put_hex - prints an unsigned int in hexadecimal
  * @my_list: the unsigned int to print
- * @uppercase: a flag indicating whether to print the letters in uppercase
+ * @upp: a flag indicating whether to print the letters in uppercase
  *
  * Return: the number of characters printed
  */
