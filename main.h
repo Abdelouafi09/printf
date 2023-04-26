@@ -34,6 +34,7 @@ int _putun(va_list my_list);
 int _putoct(va_list my_list);
 int print_x(va_list arg);
 int print_X(va_list arg);
+int _putr(va_list my_list);
 
 int (*_comp(const char a))(va_list);
 
