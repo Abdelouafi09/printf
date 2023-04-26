@@ -11,7 +11,7 @@ int _putr(va_list my_list)
 {
 	char *str = va_arg(my_list, char*);
 	char *rot13_chars = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int i, j;
+	int i;
 	int count = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
