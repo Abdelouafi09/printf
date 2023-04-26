@@ -15,6 +15,10 @@ int (*_comp(const char c))(va_list)
 		{'d', _putn},
 		{'i', _putn},
 		{'b', _putb},
+		{'u', _putun},
+		{'o', _putoct},
+		{'x', _puthex_lower},
+		{'X', _puthex_upper},
 		{'\0', NULL}
 	};
 
