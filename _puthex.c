@@ -2,24 +2,24 @@
 
 
 /**
- * print_hex - prints an unsigned int in hexadecimal
- * @arg: the unsigned int to print
+ * put_hex - prints an unsigned int in hexadecimal
+ * @my_list: the unsigned int to print
  * @uppercase: a flag indicating whether to print the letters in uppercase
  *
  * Return: the number of characters printed
  */
-int print_hex(va_list arg, int uppercase)
+int put_hex(va_list my_list, int upp)
 {
-	unsigned int n = va_arg(arg, unsigned int);
+	unsigned int n = va_arg(my_list, unsigned int);
 	char hex_chars[] = "0123456789abcdef";
 	int base = 16;
-	int printed_chars = 0;
+	int count = 0;
 	char buffer[32];
 	int i = 0;
 
 	if (n == 0)
 	{
-		putchar('0');
+		_putchar('0');
 		return (1);
 	}
 
@@ -31,14 +31,14 @@ int print_hex(va_list arg, int uppercase)
 
 	for (i = i - 1; i >= 0; i--)
 	{
-		if (uppercase)
-			putchar(_toupper(buffer[i]));
+		if (upp)
+			_putchar(_toupper(buffer[i]));
 		else
-			putchar(buffer[i]);
-		printed_chars++;
+			_putchar(buffer[i]);
+		count++;
 	}
 
-	return (printed_chars);
+	return (count);
 }
 
 /**
@@ -49,7 +49,7 @@ int print_hex(va_list arg, int uppercase)
  */
 int print_x(va_list arg)
 {
-	return (print_hex(arg, 0));
+	return (put_hex(arg, 0));
 }
 
 /**
@@ -60,5 +60,5 @@ int print_x(va_list arg)
  */
 int print_X(va_list arg)
 {
-	return (print_hex(arg, 1));
+	return (put_hex(arg, 1));
 }
