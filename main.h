@@ -19,12 +19,16 @@ typedef struct types
 	int (*func)(va_list);
 } print_f;
 
+/**assistant functions*/
 int _putchar(char c);
 int _abs(int n);
 int _toupper(int c);
+int _strlen(char *s);
 
+/**printf function that receive the arg*/
 int _printf(const char *format, ...);
 
+/**feature functions*/
 int _putc(va_list l);
 int _puts(va_list s);
 int _putn(va_list n);
@@ -35,6 +39,7 @@ int _putoct(va_list my_list);
 int print_x(va_list arg);
 int print_X(va_list arg);
 int _putr(va_list my_list);
+int _putrev(va_list my_list);
 
 int (*_comp(const char a))(va_list);
 
