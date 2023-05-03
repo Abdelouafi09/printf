@@ -36,10 +36,8 @@ int main(void)
 	printf("String:[%s]\n", "I am a string !");
 	_printf("rot13 %R \n", s);
 	printf("rot13 %R \n", s);
-	len = _printf("%r\n", s);
-	len2 = printf("%r\n", s);
-	_printf("Length:[%d, %i]\n", len, len);
-	printf("Length:[%d, %i]\n", len2, len2);
+	_printf("reverse: %r\n", s);
+	_printf("%s%S%c", "Show me the codes: ", "\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x10", '\n');
 
 	_printf("Address:[%p]\n", addr);
 	printf("Address:[%p]\n", addr);
