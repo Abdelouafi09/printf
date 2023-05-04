@@ -32,7 +32,6 @@ int _printf(const char *format, ...);
 int _putc(va_list l);
 int _puts(va_list s);
 int _putn(va_list n);
-int _putb(va_list list);
 int _putb(va_list my_list);
 int _putun(va_list my_list);
 int _putoct(va_list my_list);
