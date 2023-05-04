@@ -35,6 +35,11 @@ int _putp(va_list arg)
 	unsigned long int value = (unsigned long int) ptr;
 	int len = 0;
 
+	if (!ptr)
+	{
+		return (_printf("(nil)"));
+	}
+
 	_putchar('0');
 	_putchar('x');
 	len += 2;
