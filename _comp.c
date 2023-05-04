@@ -22,6 +22,7 @@ int (*_comp(const char c))(va_list)
 		{'R', _putr},
 		{'r', _putrev},
 		{'S', _putS},
+		{'p', _putp},
 		{'\0', NULL}
 	};
 
