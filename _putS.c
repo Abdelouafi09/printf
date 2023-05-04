@@ -19,7 +19,6 @@ int _print_hex(char c)
 
 	return (len);
 }
-
 /**
  * _putS - prints a string, replacing non-printable characters with
  * their ASCII codes in hexadecimal.
@@ -39,18 +38,10 @@ int _putS(va_list arg)
 	{
 		if (str[i] < 32 || str[i] >= 127)
 		{
-			if (str[i] == '\n')
-			{
-				_putchar('\n');
-				len++;
-			}
-			else
-			{
-				_putchar('\\');
-				_putchar('x');
-				len += 2;
-				len += _print_hex(str[i]);
-			}
+			_putchar('\\');
+			_putchar('x');
+			len += 2;
+			len += _print_hex(str[i]);
 		}
 		else
 		{
